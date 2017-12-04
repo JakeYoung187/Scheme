@@ -1,2 +1,3 @@
 # scheme
-CIS 343 Scheme assignment
+Cash register in Scheme
+CIS 343
