@@ -1,11 +1,22 @@
+(define (x) (display "Start Transation (exit with 0):") (newline) (register -1 0))
 
-;main method introduces and sends it to register (which loops until done.) Then it is sent to a totaling function
-;that adds the taxes and returns the final amount
-
-(define (register total input)
-	;print enter a value: 
-	;read in and save to input
-	;check if zero then send to finish
-	;update total
-	;return total (or recursively call)
+(define (register i t)
+	(cond ((zero? i) 
+		(newline)
+		(display "Final Subtotal: ")
+		(display t)
+		(newline)
+		(display "Tax: ")
+		(display (* t 0.065))
+		(newline)
+		(display "Total: ")
+		(display (* t 1.065)) #t)
+	(else 
+		(newline)
+		(display "Subtotal: ")
+		(display t)
+		(newline)
+		(let ((i (read))) (register i (+ t i)))
 	)
+	)
+)
